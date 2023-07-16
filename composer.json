@@ -1,0 +1,33 @@
+{
+  "name": "larastash/options",
+  "description": "Global key-value storage for Laravel based on database.",
+  "keywords": [
+    "laravel",
+    "options",
+    "database"
+  ],
+  "type": "library",
+  "homepage": "https://github.com/larastash",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Larastash\\Options\\": "src/"
+    },
+    "files": [
+      "helpers.php"
+    ]
+  },
+  "require": {
+    "php": "^8.1"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Larastash\\Options\\Providers\\OptionsServiceProvider"
+      ]
+    }
+  }
+}
