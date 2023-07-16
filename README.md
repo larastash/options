@@ -1,4 +1,4 @@
-# Options
+# Laravel Options
 
 The `Options` class provides a convenient way to interact with option values in a Laravel application.
 
