@@ -184,6 +184,11 @@ This retrieves the value of the option with the specified key. If the option doe
 option(['key' => 'new value']);
 option(['key' => 'new value'], ttl: 3600);
 option(['key' => 'new value'], ttl: now()->addHour());
+
+// or as array list
+option(['key', 'new value']);
+option(['key', 'new value'], ttl: 3600);
+option(['key', 'new value'], ttl: now()->addHour());
 ```
 This sets the value of the option with the specified key. If the option does not exist, it will be created.
 
