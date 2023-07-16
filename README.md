@@ -89,6 +89,8 @@ $value = Option::get('key', 'default', 3600);
 $value = Option::get('key', 'default', now()->addHour());
 ```
 
+If TTL is not null, then get the fresh value from the database, ignoring the cached value.
+
 ### Remove an Option
 
 You can remove an option using the `remove` method:
