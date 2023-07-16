@@ -21,7 +21,11 @@ if (! function_exists('option')) {
         }
 
         if (is_array($key)) {
-            $option->set($key[0], $key[1], $ttl);
+            if (array_is_list($key)) {
+                $option->set($key[0], $key[1], $ttl);
+            } else {
+                $option->set(key($key), current($key), $ttl);
+            }
         }
 
         return $option;
