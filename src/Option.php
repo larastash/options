@@ -45,7 +45,9 @@ class Option
 
         $value = self::query()->find($key)?->value ?? $default;
 
-        Cache::put('larastash:options_' . $key, $value, $ttl);
+        if ($ttl !== null) {
+            Cache::put('larastash:options_' . $key, $value, $ttl);
+        }
 
         return $value;
     }
