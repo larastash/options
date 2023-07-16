@@ -33,12 +33,13 @@ class Option
      *
      * @param string $key The key of the option.
      * @param mixed $default The default value to return if the option is not found.
-     * @param DateInterval|DateTimeInterface|int|null $ttl The time-to-live for the option (in seconds if integer).
+     * @param DateInterval|DateTimeInterface|int|null $ttl  The time-to-live for the option (in seconds if integer).
+     *                                                      If TTL is `null`, then get the fresh value from the database, ignoring the cached value.
      * @return mixed The value of the option.
      */
     public static function get(string $key, mixed $default = null, DateInterval|DateTimeInterface|int|null $ttl = null): mixed
     {
-        if ($ttl !== null && Cache::has('larastash:options_' . $key)) {
+        if ($ttl === null && Cache::has('larastash:options_' . $key)) {
             return Cache::get('larastash:options_' . $key);
         }
 
