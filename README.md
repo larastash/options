@@ -6,7 +6,7 @@ It allows you to set, get, remove, and check the existence of options. The class
 
 ## Requirements
 
-- Laravel 10 (other version not tested);
+- Laravel ^10 (other version not tested);
 - PHP ^8.1;
 
 To support JSON fields in a database, ensure that your chosen database meets the following requirements:
